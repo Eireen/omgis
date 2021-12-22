@@ -1,0 +1,401 @@
+/* sprite-loader-enable */
+.icn {
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+}
+.icn_hamburger {
+    background-image: url(../images/hamburger_menu@2x.png);
+    width: 32px;
+    height: 23px;
+    background-size: 32px 23px;
+}
+.icn_arrow-down-blue {
+    background-image: url(../images/arrow_down_small@2x.png);
+    width: 21px;
+    height: 13px;
+    background-size: 21px 13px;
+}
+.icn_rss {
+    background-image: url(../images/rss_blue.svg);
+    content: 'sprite.svg#rss_blue'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+.icn_user {
+    background-image: url(../images/user_blue@2x.png);
+    width: 25px;
+    height: 35px;
+}
+.icn_exit {
+    background-image: url(../images/arrow_right_blue@2x.png);
+    width: 20px;
+    height: 14px;
+}
+
+
+.icn_event_type_chart_white {
+    background-image: url(../images/chart_mini_white@2x.png);
+    width: 18px;
+    height: 19px;
+}
+.icn_event_type_gear_white {
+    background-image: url(../images/gear_white@2x.png);
+    width: 19px;
+    height: 20px;
+}
+
+
+.icn_finger_white {
+    background-image: url(../images/finger_white@2x.png);
+    width: 26px;
+    height: 34px;
+}
+
+
+
+/* Misc */
+.icn_search {
+    width: 21px;
+    height: 21px;
+    background-size: 21px 21px;
+    background-image: url(../images/icn_search_white.svg);
+    content: 'sprite.svg#icn_search_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+input:focus + .icn_search {
+    background-image: url(../images/icn_search_navy.svg);
+    content: 'sprite.svg#icn_search_navy'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_search:hover,
+input:focus + .icn_search:hover {
+    background-image: url(../images/icn_search_red.svg);
+    content: 'sprite.svg#icn_search_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_select {
+    background-image: url(../images/icn_top_down_white.svg);
+    content: 'sprite.svg#icn_top_down_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 7px 14px;
+    width: 7px;
+    height: 14px;
+    position: relative;
+    top: 3px;
+    margin-left: 14px;
+}
+.map_filter_select_root .icn_select {
+    background-image: url(../images/icn_top_down_dark_grey.svg);
+    content: 'sprite.svg#icn_top_down_dark_grey'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.page_filter:not(.called):not(.disabled) .call:hover .icn_select {
+    background-image: url(../images/icn_top_down_red.svg);
+    content: 'sprite.svg#icn_top_down_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.map_filter_select_root .page_filter.called .icn_select,
+.page_filter.called .call:hover .icn_select {
+    background-image: url(../images/icn_top_down_white.svg);
+    content: 'sprite.svg#icn_top_down_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_auth_big {
+    background-image: url(../images/icn_person_white.svg);
+    content: 'sprite.svg#icn_person_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 27px 27px;
+    width: 27px;
+    height: 27px;
+}
+.icn_ask {
+    background-image: url(../images/icn_speech_bubbles_white.svg);
+    content: 'sprite.svg#icn_speech_bubbles_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 27px 24px;
+    width: 27px;
+    height: 24px;
+}
+.page_header_userplace .icn_cross,
+.popup_close .icn_cross,
+.icn_cross_big_white {
+    background-image: url(../images/icn_big_cross_white.svg);
+    content: 'sprite.svg#icn_big_cross_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 26px 26px;
+    width: 26px;
+    height: 26px;
+}
+a.auth_close:hover .icn_cross,
+a.popup_close:hover .icn_cross {
+    background-image: url(../images/icn_big_cross_red.svg);
+    content: 'sprite.svg#icn_big_cross_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.clear_filter .icn_cross,
+.attachments_popup .close .icn_cross {
+    background-image: url(../images/icn_big_cross_white.svg);
+    content: 'sprite.svg#icn_big_cross_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 17px 17px;
+    width: 17px;
+    height: 17px;
+    vertical-align: top;
+}
+.clear_filter:hover .icn_cross {
+    background-image: url(../images/icn_big_cross_red.svg);
+    content: 'sprite.svg#icn_big_cross_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.attachments_popup .close:hover .icn_cross {
+    /* в хроме на убунту 12.04 сверху мелькают белые пиксели - сделаем размер поменьше */
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+}
+.icn_star {
+    background-image: url(../images/icn_star_navy.svg);
+    content: 'sprite.svg#icn_star_navy'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 23px 22px;
+    width: 23px;
+    height: 22px;
+}
+a:hover .icn_star {
+    background-image: url(../images/icn_star_red.svg);
+    content: 'sprite.svg#icn_star_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_calendar {
+    background-image: url(../images/icn_calendar_white.svg);
+    content: 'sprite.svg#icn_calendar_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 17px 17px;
+    width: 17px;
+    height: 17px;
+}
+a:hover .icn_calendar,
+.project_stats_cell:hover .icn_calendar {
+    background-image: url(../images/icn_calendar_red.svg);
+    content: 'sprite.svg#icn_calendar_red'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_calendar_slate {
+    background-image: url(../images/icn_calendar_slate.svg);
+    content: 'sprite.svg#icn_calendar_slate'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 17px 17px;
+    width: 17px;
+    height: 17px;
+}
+.icn_calendar_navy {
+    background-image: url(../images/icn_calendar_navy.svg);
+    content: 'sprite.svg#icn_calendar_navy'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 17px 17px;
+    width: 17px;
+    height: 17px;
+}
+.icn_auth {
+    background-image: url(../images/icn_person_white.svg);
+    content: 'sprite.svg#icn_person_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 19px 19px;
+    width: 19px;
+    height: 19px;
+}
+.icn_arrow_down_navy_22x13 {
+    background: url(../images/arrow_navy.svg) no-repeat 0 0 / 22px 13px;
+    content: 'sprite.svg#arrow_navy'; /* dirty hack for passing url to fixSVGStackBackground() */
+    display: inline-block;
+    width: 22px;
+    height: 13px;
+    overflow: hidden;
+}
+.icn_arrow_down_navy_14x9 {
+    background: url(../images/arrow_navy.svg) no-repeat 0 0 / 14px 9px;
+    content: 'sprite.svg#arrow_navy'; /* dirty hack for passing url to fixSVGStackBackground() */
+    display: inline-block;
+    width: 14px;
+    height: 9px;
+    /*overflow: hidden;*/
+}
+.icn_gear {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background: url(../images/icn_gear.svg) no-repeat;
+    content: 'sprite.svg#icn_gear'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_gear_16x16 {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icn_gear.svg) no-repeat 0 0 / 16px 16px;
+    content: 'sprite.svg#icn_gear'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+a:hover .icn_gear {
+    background-image: url(../images/icn_gear_h.svg);
+    content: 'sprite.svg#icn_gear_h'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+.icn_attachments {
+    display: inline-block;
+    width: 22px;
+    height: 23px;
+    background: url(../images/icn_attach.svg) no-repeat;
+    content: 'sprite.svg#icn_attach'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+thead.table_section .icn_attachments,
+tr[data-heading-level].opened .icn_attachments {
+    background-image: url(../images/icn_attach_white.svg);
+    content: 'sprite.svg#icn_attach_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+}
+
+.icn_arrow_down_white {
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    background: url(../images/down_arr.svg) no-repeat;
+    content: 'sprite.svg#down_arr'; /* dirty hack for passing url to fixSVGStackBackground() */
+    margin-left: 18px;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.icn_plus_in_circle_white {
+    background-image: url(../images/plus_in_circle_white.svg);
+    content: 'sprite.svg#plus_in_circle_white'; /* dirty hack for passing url to fixSVGStackBackground() */
+    background-size: 25px;
+    width: 25px;
+    height: 25px;
+}
+
+
+/* Карта */
+
+.icn_layers {
+    background-image: url(../images/layers@2x.png);
+    width: 27px;
+    height: 25px;
+    background-size: 27px 25px;
+}
+.icn_arrow_down_navy_2 {
+    background-image: url(../images/arrow_down_navy_2@2x.png);
+    width: 15px;
+    height: 9px;
+    background-size: 15px 9px;
+}
+.icn_brightness_slate {
+    background-image: url(../images/brightness_slate@2x.png);
+    width: 16px;
+    height: 16px;
+}
+.icn_brightness_navy {
+    background-image: url(../images/brightness_navy@2x.png);
+    width: 16px;
+    height: 16px;
+}
+.icn_cross_slate {
+    background-image: url(../images/cross_slate@2x.png);
+    width: 14px;
+    height: 14px;
+}
+.period_control_button:hover .icn_cross_slate {
+    background-image: url(../images/cross_navy@2x.png);
+}
+.icn_table_white {
+    background-image: url(../images/table_white@2x.png);
+    width: 20px;
+    height: 17px;
+}
+.icn_map_marker_medium_white {
+    background-image: url(../images/map_marker_medium_white@2x.png);
+    width: 18px;
+    height: 26px;
+}
+.icn_arrow_right_grey_13 {
+    background-image: url(../images/arrow_right_grey_13@2x.png);
+    width: 15px;
+    height: 12px;
+}
+.icn_arrow_right_blue_13 {
+    background-image: url(../images/arrow_right_blue_13@2x.png);
+    width: 15px;
+    height: 12px;
+}
+.icn_arrow_right_white_13 {
+    background-image: url(../images/arrow_right_white_13@2x.png);
+    width: 15px;
+    height: 12px;
+}
+
+
+
+.icn_chart_filled_navy {
+    background-image: url(../images/map_popup_toolbar/chart_filled_navy.svg);
+    background-size: 20px 18px;
+    width: 22px;
+    height: 20px;
+}
+.icn_line_chart_navy {
+    background-image: url(../images/map_popup_toolbar/line_chart_navy.svg);
+    background-size: 22px 16px;
+    width: 24px;
+    height: 18px;
+}
+.icn_ruler_navy {
+    background-image: url(../images/map_popup_toolbar/ruler_navy.svg);
+    background-size: 20px 20px;
+    width: 22px;
+    height: 22px;
+}
+.icn_square_measurement_navy {
+    background-image: url(../images/map_popup_toolbar/square_measurement_navy.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+.icn_sun_navy {
+    background-image: url(../images/map_popup_toolbar/sun_navy.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+.icn_sunrise_navy {
+    background-image: url(../images/map_popup_toolbar/sunrise_navy.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+.icn_panoramic_view_navy {
+    background-image: url(../images/map_popup_toolbar/panoramic_view_navy.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.icn_map_marker_navy {
+    background-image: url(../images/map_marker_small_navy.svg);
+    background-size: auto 30px;
+    width: 20px;
+    height: 30px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .icn_cat_1 {
+        width: 76px;
+        height: 50px;
+        background-size: 76px 50px;
+    }
+    .footer .icn_ask {
+        width: 19px;
+        height: 16px;
+        background-size: 19px 16px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .icn_cat_1 {
+        width: 63px;
+        height: 42px;
+        background-size: 63px 42px;
+    }
+    .page_filter._r .icn_gear {
+        background: url(../images/icn_gear_g.svg) no-repeat;
+        content: 'sprite.svg#icn_gear_g'; /* dirty hack for passing url to fixSVGStackBackground() */
+    }
+    .page_filter._r a:hover .icn_gear {
+        background-image: url(../images/icn_gear_h.svg);
+        content: 'sprite.svg#icn_gear_h'; /* dirty hack for passing url to fixSVGStackBackground() */
+    }
+}

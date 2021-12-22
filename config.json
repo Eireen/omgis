@@ -1,0 +1,17 @@
+{
+    "wmsBaseUrl": "http://127.0.0.1:10800",
+    "apiProvider": "http://127.0.0.1:10800",
+    "defaultSiteTitle": "OMGIS",
+    "webpackDevServer": {
+        "host": "my-host.test",
+        "port": "15000"
+    },
+    "feedbackEmail": "feedback@example.com",
+
+    "analyticsHomeHost": "analytics.example.com",
+    "analyticsEnabledHosts": [
+        "example.com"
+    ],
+
+    "apiVersion": "2"
+}

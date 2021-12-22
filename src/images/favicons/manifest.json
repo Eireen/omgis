@@ -1,0 +1,13 @@
+{
+    "name": "\u041a\u0438\u041c",
+    "icons": [
+        {
+            "src": "/android-chrome-72x72.png?v=wAv5Lt09JP",
+            "sizes": "72x72",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

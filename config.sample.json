@@ -1,0 +1,17 @@
+{
+    "wmsBaseUrl": "https://maps.example.com/wms_server",
+    "apiProvider": "http://api.test",
+    "defaultSiteTitle": "OMGIS",
+    "webpackDevServer": {
+        "host": "example.test",
+        "port": "12345"
+    },
+    "feedbackEmail": "feedback@example.com",
+
+    "analyticsHomeHost": "analytics.example.ru",
+    "analyticsEnabledHosts": [
+        "control.example.ru"
+    ],
+
+    "apiVersion": "<arbitrary value for cache busting>"
+}

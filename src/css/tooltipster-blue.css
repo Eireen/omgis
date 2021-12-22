@@ -1,0 +1,55 @@
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue .tooltipster-box {
+    background: #1A72B4;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue .tooltipster-content {
+    color: #fff;
+    padding: 15px 16px;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue .tooltipster-arrow-border {
+    border-width: 8px;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-left .tooltipster-arrow,
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-right .tooltipster-arrow,
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-top .tooltipster-arrow {
+    height: 16px;
+    width: 8px;
+    margin-top: -8px;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow {
+    right: -2px;
+}
+.tooltipster-sidetip.tooltipster-top.tooltipster-shadow.tooltipster-blue .tooltipster-arrow {
+    bottom: -3px;
+    width: 16px;
+    height: 9px;
+    margin-left: -8px;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-left .tooltipster-arrow-border {
+    border-left-color: #1A72B4;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-right .tooltipster-arrow-border {
+    border-right-color: #1A72B4;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-top .tooltipster-arrow-border {
+    border-top-color: #1A72B4;
+}
+
+.tooltipster-sidetip.tooltipster-shadow.tooltipster-blue.tooltipster-bottom .tooltipster-arrow-border {
+    border-bottom-color: #1A72B4;
+}
+
+.tooltipster-content ul {
+    padding-left: 20px;
+}

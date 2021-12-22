@@ -1,0 +1,57 @@
+{
+  "name": "omgis",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mapbox/polylabel": "^1.0.2",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
+    "classnames": "^2.3.1",
+    "immutability-helper": "^3.1.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.6.0",
+    "js-cookie": "^2.2.0",
+    "jss-preset-default": "^10.9.0",
+    "jwt-decode": "^2.2.0",
+    "leaflet": "^1.2.0",
+    "leaflet.locatecontrol": "^0.62.0",
+    "leaflet.wms": "github:Eireen/leaflet.wms#gh-pages",
+    "locutus": "^2.0.9",
+    "page": "^1.11.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-jss": "^10.9.0",
+    "react-redux": "^7.2.6",
+    "react-scripts": "5.0.0",
+    "react-transition-group": "^4.4.2",
+    "redux": "^4.1.2",
+    "velocity-animate": "^1.5.0",
+    "web-vitals": "^2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

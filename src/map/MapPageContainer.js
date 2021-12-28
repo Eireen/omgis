@@ -1,6 +1,7 @@
 import { creators as mapPageActionCreators } from '../actions/mapPage';
 import { connect } from 'react-redux';
 import { toUpperCaseFirst } from '../utils/string';
+import { objectSubset } from '../utils/common';
 import api from '../api';
 import MapPage from './MapPage';
 import React from 'react';
@@ -135,7 +136,16 @@ class MapPageContainer extends React.Component {
         if (!this.mounted) return;
 
         this.props.updateLayerTree(layerTree, layerTreeReferences);
-        this.props.setDefaultActiveNodes(layerTree);
+        this.setDefaultActiveNodes(layerTree);
+    }
+
+    setDefaultActiveNodes(layerTree) {
+        /* Обёртка над `setDefaultActiveNodes` из `mapDispatchToProps`
+        для получения доступа к this.props */
+
+        const { layersById, references, visibleLayerIds } = this.props;
+
+        this.props.setDefaultActiveNodes({ layerTree, layersById, references, visibleLayerIds });
     }
 
     render() {
@@ -165,9 +175,12 @@ function getEnabledByDefaultNodeIds(layerTree, openNodeIds = [], visibleLayerIds
 }
 
 function mapStateToProps(state) {
-    return {
-        layerTree: state.mapPage.layers.layerTree,
-    };
+    return objectSubset(state.mapPage.layers, [
+        'layerTree',
+        'layersById',
+        'references',
+        'visibleLayerIds',
+    ]);
 }
 
 function mapDispatchToProps(dispatch) {
@@ -177,16 +190,19 @@ function mapDispatchToProps(dispatch) {
                 mapPageActionCreators.layers.setLayerTree({ layerTree, references: layerTreeReferences })
             );
         },
-        setDefaultActiveNodes: function(layerTree) {
-            const { openNodeIds, visibleLayerIds } = getEnabledByDefaultNodeIds(layerTree);
+        setDefaultActiveNodes: function({ layerTree, layersById, references, visibleLayerIds }) {
+            const { openNodeIds, visibleLayerIds: defaultVisibleLayerIds } = getEnabledByDefaultNodeIds(layerTree);
             if (openNodeIds.length) {
                 dispatch(
                     mapPageActionCreators.layers.toggleLayerGroups(openNodeIds)
                 );
             }
-            if (visibleLayerIds.length) {
+            if (defaultVisibleLayerIds.length) {
                 dispatch(
-                    mapPageActionCreators.layers.toggleLayers(visibleLayerIds)
+                    mapPageActionCreators.layers.toggleLayers({
+                        layerIds: defaultVisibleLayerIds,
+                        layersById, references, visibleLayerIds,
+                    })
                 );
             }
         },

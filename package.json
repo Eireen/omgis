@@ -34,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,5 +54,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "comments": {
+    "static web server": {
+      "command": "npm install -g serve pm2@latest && pm2 start npm --name omgis-front -- run serve"
+    }
   }
 }

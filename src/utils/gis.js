@@ -25,3 +25,19 @@ export function decimalDegreesToDMS(degDecimal, separator = '&nbsp;') {
 
     return degrees + "°" + separator + minutes + "′" + separator + seconds + "″";
 }
+
+function isNumberInRange(value, min, max) {
+    return !isNaN(value) && value >= min && value <= max;
+}
+
+export function isValidLat(value) {
+    return isNumberInRange(value, -90, 90);
+}
+
+export function isValidLng(value) {
+    return isNumberInRange(value, -180, 180);
+}
+
+export function isValidZoom(value) {
+    return isNumberInRange(value, 0, 20);
+}

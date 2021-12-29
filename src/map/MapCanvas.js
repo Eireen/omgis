@@ -1,5 +1,6 @@
 import { creators as mapPageActionCreators } from '../actions/mapPage';
 import { connect } from 'react-redux';
+import { isValidLat, isValidLng, isValidZoom } from '../utils/gis';
 import { importAll } from '../utils/import';
 import { roundTo } from '../utils/common';
 import Leaflet from 'leaflet';
@@ -19,11 +20,12 @@ class MapCanvas extends React.Component {
 
     mapNode = null  // Leaflet Map container
 
-    defaultMapPosition = {
-        lat: 56.5390,
-        lng: 37.3878,
-        zoom: 5,
-    }
+    // Приблизительные границы материковой части РФ.
+    // lat_min = 41.310824, lat_max = 76.058508, lng_min = 19.511719 lng_max = 190.195313
+    defaultMapBounds = [
+        [41.310824, 19.511719],
+        [76.058508, 190.195313],
+    ]
 
     componentDidMount() {
         this.addWindowResizeListener();
@@ -131,18 +133,31 @@ class MapCanvas extends React.Component {
     }
 
     setMapPositionFromURL(map) {
-        const defaults = this.defaultMapPosition;
+        let setDefaultViewport = true;
 
         const mapPositionStr = window.location.hash.replace(/^#/, '');
-        let [
-            lat, // дефолтное значение устанавливается ниже - т.к. в mapPositionStr всегда будет минимум пустая строка
-            lng = defaults.lng,
-            zoom = defaults.zoom
-        ] = mapPositionStr.split(',');
+        if (mapPositionStr) {
+            // Get map viewbox from hash string
+            const coords = mapPositionStr.split(',');
+            const lat = parseFloat(coords[0]);
+            const lng = parseFloat(coords[1]);
+            const zoom = parseInt(coords[2]);
 
-        lat === '' && (lat = defaults.lat);
+            if (isValidLat(lat) && isValidLng(lng) && isValidZoom(zoom)) {
+                map.setView([ lat, lng ], zoom);
+                setDefaultViewport = false;
+            } else {
+                console.warn(`Invalid map position in URL fragment: lat = ${lat}, lng = ${lng}, zoom = ${zoom}. Showing default bounds.`);
+            }
+        }
 
-        map.setView([ lat, lng ], zoom);
+        if (setDefaultViewport) {
+            map.fitBounds(this.defaultMapBounds);
+
+            if (mapPositionStr) {
+                this.updateMapPositionInURL(map);
+            }
+        }
     }
 
     addZoomControl(map) {

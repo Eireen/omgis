@@ -2,7 +2,8 @@ import { creators as mapPageActionCreators } from '../actions/mapPage';
 import { connect } from 'react-redux';
 import { isValidLat, isValidLng, isValidZoom } from '../utils/gis';
 import { importAll } from '../utils/import';
-import { roundTo } from '../utils/common';
+import { objectSubset, roundTo } from '../utils/common';
+import cx from 'classnames';
 import Leaflet from 'leaflet';
 import LeafletLocateControl from 'leaflet.locatecontrol';
 import MapInteractionManager from './MapInteractionManager';
@@ -223,12 +224,17 @@ class MapCanvas extends React.Component {
 
     render() {
         const { map } = this.state;
+        const { visibleLayerIds } = this.props;
+
+        const mapCanvasClasses = cx('map', {
+            map_no_layers: !visibleLayerIds.length,
+        });
 
         return (
             <MapLayerManager map={map}>
                 <MapInteractionManager map={map}>
                     <div className="map_canvas_container">
-                        <div className="map" ref={this.refCanvas}></div>
+                        <div className={mapCanvasClasses} ref={this.refCanvas}></div>
                         <MapPointPopup />
                         <MapPointMarker />
                     </div>
@@ -236,6 +242,10 @@ class MapCanvas extends React.Component {
             </MapLayerManager>
         );
     }
+}
+
+function mapStateToProps(state) {
+    return objectSubset(state.mapPage.layers, ['visibleLayerIds']);
 }
 
 /* От кривых путей к иконкам Leaflet-а при обработке вебпаком */
@@ -246,4 +256,4 @@ Leaflet.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
-export default connect()(MapCanvas);
+export default connect(mapStateToProps)(MapCanvas);

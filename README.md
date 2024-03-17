@@ -1,7 +1,7 @@
-# OMGIS - Mini GIS
+# OMGIS — Mini GIS
 
-Фронтенд демонстрационного веб-проекта, представляющего собой мини-ГИС.
+Frontend of a demo web project, which is a mini-GIS.
 
-Создан на основе [Create React App](docs/create_react_app.md).
+Based on [Create React App](docs/create_react_app.md).
 
-[TRY IT LIVE](https://eireen.space/) **(:exclamation: UPD: temporarily shutdown)**
+[TRY IT LIVE](https://eireen.space/) **(❗ UPD: temporarily shutdown)**
